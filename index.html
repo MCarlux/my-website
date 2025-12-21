@@ -3,15 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home | Matteo Carlucci</title>
+    <title>Appunti | Matteo Carlucci</title>
     <style>
-        /* CSS
+        /* CSS unificato con la Home Page per coerenza */
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
             line-height: 1.6;
             color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
         header {
             background: #333;
@@ -31,42 +34,55 @@
             font-weight: bold;
         }
         nav a:hover {
-            color: #f4a261; /* Colore accento al passaggio del mouse */
+            color: #f4a261; /* Colore accento */
         }
         .container {
             padding: 2rem;
             max-width: 800px;
             margin: auto;
-            text-align: center;
+            flex: 1;
         }
-        .btn {
-            display: inline-block;
-            background: #f4a261;
-            color: #fff;
-            padding: 10px 20px;
+        /* Stile specifico per la lista dei download */
+        ul.article-list {
+            list-style-type: none; /* Rimuove i pallini */
+            padding: 0;
+        }
+        ul.article-list li {
+            background: #f9f9f9;
+            margin: 15px 0;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 5px solid #f4a261; /* Bordo colorato a sinistra */
+            transition: transform 0.2s;
+        }
+        ul.article-list li:hover {
+            transform: translateX(5px); /* Piccolo movimento al passaggio del mouse */
+            background: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        ul.article-list a {
             text-decoration: none;
-            border-radius: 5px;
-            margin-top: 20px;
-            transition: background 0.3s;
+            color: #333;
+            font-weight: bold;
+            font-size: 1.1rem;
+            display: block;
         }
-        .btn:hover {
-            background: #e76f51;
+        ul.article-list a:hover {
+            color: #e76f51;
         }
         footer {
             background: #333;
             color: #fff;
             text-align: center;
             padding: 10px;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
+            margin-top: auto;
         }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>MC</h1>
+        <h1>Appunti</h1>
     </header>
 
     <nav>
@@ -77,10 +93,21 @@
     </nav>
 
     <div class="container">
-        <h2>Ciao! </h2>
-        <p>Esplora le varie sezioni per trovare i miei appunti di studio, informazioni su di me e come contattarmi.</p>
+        <h2>Materiale di Studio</h2>
+        <p>Qui puoi trovare i PDF delle mie ricerche e appunti di Storia dell'Arte.</p>
         
-        <a href="articles.html" class="btn">Vai ai miei Appunti</a>
+        <ul class="article-list">
+            <li>
+                <a href="Storia dell'arte- Raffaello e Giorgione.pdf" target="_blank">
+                    📄 Raffaello e Giorgione (PDF)
+                </a>
+            </li>
+            <li>
+                <a href="Storia dell'arte - Tiziano, Caravaggio e Bernini.pdf" target="_blank">
+                    📄 Tiziano, Caravaggio e Bernini (PDF)
+                </a>
+            </li>
+        </ul>
     </div>
 
     <footer>
@@ -89,4 +116,3 @@
 
 </body>
 </html>
-
